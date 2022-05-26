@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC
+        "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+<!--        <typeAlias alias="order" type="zhd.cn.Mybatis.pojo.StudentPojo" />-->
+        <!-- 使用自动扫描的形式来定义别名，在Role中使用@Alias("role")注解进行说明-->
+        <!-- <package name="com.jCuckoo.chapter02.pojo"/> -->
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver" />
+                <property name="url" value="jdbc:postgresql://localhost:5432/dd_database" />
+                <property name="username" value="postgres" />
+                <property name="password" value="root" />
+            </dataSource>
+
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/dd_driving"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="root"/>-->
+<!--            </dataSource>-->
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com\dd_driving\order\mapper\OrdersMapper.xml" />
+    </mappers>
+</configuration>

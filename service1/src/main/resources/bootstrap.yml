@@ -1,0 +1,16 @@
+server:
+  port: 56010 #启动端口 命令行注入
+
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.4.115:8848 # 配置中心地址
+        file-extension: yml #dataid = name + file-extension
+        namespace: aee0716b-a7e4-4146-973f-7f6ced5f2991
+        group: TEST_GROUP
+
+commom:
+  name: service1 config change2
